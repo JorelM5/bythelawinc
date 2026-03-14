@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>By The Law Inc | Legal Document Assistance · Sacramento, CA</title>
+  <meta name="description" content="Affordable legal document preparation, notary services, live scan fingerprinting, certified translations, and process serving in Sacramento, CA. Se Habla Español." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #0e1c2f;
+      --gold: #c49a3c;
+      --gold-light: #e8c06a;
+      --gold-pale: #f9f3e7;
+      --cream: #faf8f4;
+      --white: #ffffff;
+      --gray-100: #f3f1ed;
+      --gray-200: #e5e1d8;
+      --gray-400: #9e9990;
+      --gray-600: #5c5750;
+      --gray-800: #2c2a27;
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body: 'DM Sans', sans-serif;
+      --radius: 4px;
+      --radius-lg: 12px;
+      --shadow-card: 0 2px 20px rgba(14,28,47,0.08);
+      --shadow-hover: 0 8px 40px rgba(14,28,47,0.14);
+      --transition: 0.28s cubic-bezier(0.4,0,0.2,1);
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); background: var(--cream); color: var(--gray-800); line-height: 1.7; overflow-x: hidden; }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--cream); }
+    ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
+
+    /* NAV */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0 5%; height: 72px; background: rgba(14,28,47,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(196,154,60,0.2); transition: var(--transition); }
+    nav.scrolled { height: 60px; box-shadow: 0 4px 24px rgba(0,0,0,0.25); }
+    .nav-logo { display: flex; align-items: center; text-decoration: none; }
+    .nav-logo img { height: 44px; width: auto; filter: brightness(0) invert(1); transition: filter var(--transition); }
+    nav.scrolled .nav-logo img { height: 36px; }
+    .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+    .nav-links a { font-size: 13px; font-weight: 400; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; color: rgba(255,255,255,0.75); transition: color var(--transition); position: relative; }
+    .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; right: 0; height: 1px; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform var(--transition); }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-links a:hover::after { transform: scaleX(1); }
+    .nav-cta { font-size: 12px !important; font-weight: 500 !important; padding: 8px 20px; background: var(--gold) !important; color: var(--navy) !important; border-radius: var(--radius); }
+    .nav-cta:hover { background: var(--gold-light) !important; transform: translateY(-1px); }
+    .nav-cta::after { display: none !important; }
+    .lang-switcher { display: flex; align-items: center; gap: 2px; margin-left: 20px; border: 1px solid rgba(196,154,60,0.3); border-radius: 20px; overflow: hidden; flex-shrink: 0; }
+    .lang-btn { font-size: 11px; font-weight: 500; letter-spacing: 0.06em; padding: 5px 11px; background: transparent; color: rgba(255,255,255,0.55); border: none; cursor: pointer; transition: background var(--transition), color var(--transition); font-family: var(--font-body); }
+    .lang-btn.active { background: var(--gold); color: var(--navy); }
+    .lang-btn:hover:not(.active) { color: var(--gold); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+    .hamburger span { display: block; width: 24px; height: 1.5px; background: var(--white); transition: var(--transition); }
+    .mobile-menu { display: none; position: fixed; top: 72px; left: 0; right: 0; z-index: 99; background: var(--navy); padding: 20px 5% 30px; flex-direction: column; border-bottom: 1px solid rgba(196,154,60,0.2); }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { display: block; padding: 14px 0; font-size: 15px; text-decoration: none; color: rgba(255,255,255,0.8); border-bottom: 1px solid rgba(255,255,255,0.07); transition: color var(--transition); }
+    .mobile-menu a:hover { color: var(--gold); }
+
+    /* HERO */
+    #hero { min-height: 100vh; background: var(--navy); display: flex; align-items: center; position: relative; overflow: hidden; padding: 100px 5% 60px; }
+    .hero-bg-img { position: absolute; inset: 0; background-image: url('images/hero.jpg'); background-size: cover; background-position: center top; opacity: 0.18; }
+    .hero-bg-overlay { position: absolute; inset: 0; background: linear-gradient(105deg, rgba(14,28,47,0.97) 50%, rgba(14,28,47,0.7) 100%); }
+    .hero-bg-pattern { position: absolute; inset: 0; background-image: linear-gradient(rgba(196,154,60,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(196,154,60,0.04) 1px, transparent 1px); background-size: 60px 60px; }
+    .hero-content { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .hero-welcome-wrap { display: flex; flex-direction: column; align-items: flex-start; margin-bottom: 28px; }
+    .hero-welcome-label { font-size: 12px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
+    .hero-logo-large { height: 90px; width: auto; filter: brightness(0) invert(1); margin-bottom: 6px; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); border: 1px solid rgba(196,154,60,0.3); padding: 6px 14px; border-radius: 20px; margin-bottom: 24px; }
+    .hero-badge::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--gold); }
+    .hero-title { font-family: var(--font-display); font-size: clamp(28px, 4vw, 44px); font-weight: 700; line-height: 1.2; color: var(--white); margin-bottom: 20px; }
+    .hero-title em { font-style: italic; color: var(--gold); }
+    .hero-subtitle { font-size: 17px; font-weight: 300; color: rgba(255,255,255,0.65); margin-bottom: 36px; line-height: 1.8; }
+    .hero-subtitle strong { color: rgba(255,255,255,0.9); font-weight: 500; }
+    .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn-gold { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; background: var(--gold); color: var(--navy); font-size: 14px; font-weight: 500; text-decoration: none; border-radius: var(--radius); transition: background var(--transition), transform var(--transition), box-shadow var(--transition); border: none; cursor: pointer; font-family: var(--font-body); }
+    .btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(196,154,60,0.3); }
+    .btn-outline { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; background: transparent; color: var(--white); font-size: 14px; font-weight: 400; text-decoration: none; border-radius: var(--radius); border: 1px solid rgba(255,255,255,0.3); transition: border-color var(--transition), color var(--transition), transform var(--transition); cursor: pointer; font-family: var(--font-body); }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+    .hero-stats { display: flex; gap: 32px; margin-top: 44px; padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.1); }
+    .stat-num { font-family: var(--font-display); font-size: 28px; font-weight: 700; color: var(--gold); }
+    .stat-label { font-size: 12px; color: rgba(255,255,255,0.5); letter-spacing: 0.05em; }
+    .hero-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(196,154,60,0.25); border-radius: var(--radius-lg); padding: 32px; backdrop-filter: blur(10px); }
+    .hero-card-title { font-family: var(--font-display); font-size: 18px; color: var(--white); margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+    .hero-card-title::before { content: ''; width: 3px; height: 20px; background: var(--gold); border-radius: 2px; }
+    .hero-service-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .hero-service-list li { display: flex; align-items: center; gap: 12px; font-size: 14px; color: rgba(255,255,255,0.75); }
+    .hero-service-list li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
+    .hero-contact-row { margin-top: 24px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); display: flex; flex-direction: column; gap: 10px; }
+    .hero-contact-item { display: flex; align-items: center; gap: 10px; font-size: 13px; color: rgba(255,255,255,0.6); }
+    .hero-contact-item svg { width: 15px; height: 15px; flex-shrink: 0; stroke: var(--gold); }
+    .hero-contact-item a { color: var(--gold-light); text-decoration: none; }
+
+    /* SECTIONS */
+    section { padding: 96px 5%; }
+    .section-inner { max-width: 1200px; margin: 0 auto; }
+    .section-label { font-size: 11px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; display: block; }
+    .section-title { font-family: var(--font-display); font-size: clamp(28px, 4vw, 42px); font-weight: 700; line-height: 1.2; color: var(--navy); margin-bottom: 16px; }
+    .section-title.light { color: var(--white); }
+    .section-desc { font-size: 16px; font-weight: 300; color: var(--gray-600); max-width: 560px; line-height: 1.8; }
+    .section-desc.light { color: rgba(255,255,255,0.6); }
+    .section-header { margin-bottom: 52px; }
+    .divider { width: 48px; height: 2px; background: var(--gold); margin: 16px 0 0; }
+
+    /* ABOUT */
+    #about { background: var(--white); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .about-img-wrap { position: relative; }
+    .about-img-wrap img { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: var(--radius-lg); display: block; }
+    .about-accent { position: absolute; bottom: -24px; right: -24px; width: 180px; height: 180px; background: var(--gold-pale); border-radius: var(--radius-lg); z-index: -1; }
+    .about-accent2 { position: absolute; top: -24px; left: -24px; width: 80px; height: 80px; border: 2px solid var(--gold); border-radius: var(--radius-lg); z-index: -1; opacity: 0.4; }
+    .about-values { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 28px 0; }
+    .value-chip { display: flex; align-items: center; gap: 10px; padding: 12px 16px; background: var(--gray-100); border-radius: var(--radius); font-size: 13px; font-weight: 500; color: var(--gray-800); }
+    .value-chip svg { width: 16px; height: 16px; stroke: var(--gold); flex-shrink: 0; }
+    .about-memberships { margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--gray-200); }
+    .memberships-label { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-400); margin-bottom: 16px; }
+    .memberships-logos { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; }
+    .memberships-logos img { height: 36px; width: auto; object-fit: contain; filter: grayscale(100%) opacity(0.65); transition: filter var(--transition); }
+    .memberships-logos img:hover { filter: grayscale(0%) opacity(1); }
+
+    /* SERVICES */
+    #services { background: var(--cream); }
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .service-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-lg); overflow: hidden; transition: transform var(--transition), box-shadow var(--transition); }
+    .service-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+    .service-card-img { width: 100%; height: 180px; object-fit: cover; display: block; transition: transform 0.4s ease; }
+    .service-card:hover .service-card-img { transform: scale(1.04); }
+    .service-card-img-wrap { overflow: hidden; position: relative; }
+    .service-card-img-wrap::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 60px; background: linear-gradient(transparent, rgba(14,28,47,0.15)); }
+    .service-card-body { padding: 22px 20px 24px; }
+    .service-card-body h3 { font-family: var(--font-display); font-size: 17px; font-weight: 600; color: var(--navy); margin-bottom: 8px; }
+    .service-card-body p { font-size: 13px; color: var(--gray-600); line-height: 1.7; margin-bottom: 14px; }
+    .service-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .tag { font-size: 11px; font-weight: 500; padding: 3px 10px; background: var(--gray-100); color: var(--gray-600); border-radius: 20px; }
+
+    /* PRICING */
+    #pricing { background: var(--navy); position: relative; overflow: hidden; }
+    #pricing::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(196,154,60,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(196,154,60,0.03) 1px, transparent 1px); background-size: 40px 40px; }
+    .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; position: relative; z-index: 1; }
+    .pricing-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--radius-lg); padding: 32px 24px; transition: transform var(--transition), border-color var(--transition); }
+    .pricing-card:hover { transform: translateY(-4px); border-color: rgba(196,154,60,0.4); }
+    .pricing-card.highlight { background: rgba(196,154,60,0.08); border-color: rgba(196,154,60,0.4); }
+    .pricing-label { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+    .pricing-card h3 { font-family: var(--font-display); font-size: 20px; color: var(--white); margin-bottom: 8px; }
+    .pricing-price { font-family: var(--font-display); font-size: 36px; font-weight: 700; color: var(--gold); margin: 16px 0 4px; }
+    .pricing-price span { font-size: 16px; font-weight: 400; color: rgba(255,255,255,0.5); font-family: var(--font-body); }
+    .pricing-note { font-size: 12px; color: rgba(255,255,255,0.4); margin-bottom: 20px; }
+    .pricing-features { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
+    .pricing-features li { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; color: rgba(255,255,255,0.7); }
+    .pricing-features li::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--gold); flex-shrink: 0; margin-top: 7px; }
+
+    /* TESTIMONIALS */
+    #testimonials { background: var(--white); }
+    .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .testimonial-card { background: var(--cream); border: 1px solid var(--gray-200); border-radius: var(--radius-lg); padding: 28px 24px; position: relative; transition: box-shadow var(--transition), transform var(--transition); }
+    .testimonial-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-3px); }
+    .testimonial-card::before { content: '"'; font-family: var(--font-display); font-size: 72px; line-height: 1; color: var(--gold); opacity: 0.3; position: absolute; top: 12px; left: 20px; }
+    .stars { display: flex; gap: 3px; margin-bottom: 14px; }
+    .stars svg { width: 14px; height: 14px; fill: var(--gold); }
+    .testimonial-text { font-size: 14px; color: var(--gray-600); line-height: 1.8; margin-bottom: 18px; font-style: italic; }
+    .testimonial-author { display: flex; align-items: center; gap: 10px; }
+    .author-avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--navy); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 500; color: var(--gold-light); flex-shrink: 0; }
+    .author-name { font-size: 13px; font-weight: 500; color: var(--navy); }
+    .author-detail { font-size: 11px; color: var(--gray-400); }
+    .testimonials-cta { text-align: center; margin-top: 40px; }
+    .testimonials-cta p { font-size: 13px; color: var(--gray-400); margin-bottom: 14px; }
+
+    /* CONTACT */
+    #contact { background: var(--cream); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 60px; align-items: start; }
+    .contact-info { display: flex; flex-direction: column; gap: 32px; }
+    .contact-info-block h3 { font-family: var(--font-display); font-size: 16px; color: var(--navy); margin-bottom: 16px; }
+    .contact-item { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px; }
+    .contact-item-icon { width: 36px; height: 36px; flex-shrink: 0; background: var(--gold-pale); border-radius: var(--radius); display: flex; align-items: center; justify-content: center; }
+    .contact-item-icon svg { width: 16px; height: 16px; stroke: var(--gold); }
+    .contact-item-text { font-size: 14px; color: var(--gray-600); line-height: 1.6; }
+    .contact-item-text a { color: var(--navy); text-decoration: none; font-weight: 500; }
+    .contact-item-text a:hover { color: var(--gold); }
+    .hours-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 16px; }
+    .hour-row { display: flex; justify-content: space-between; font-size: 13px; padding: 6px 0; border-bottom: 1px solid var(--gray-200); }
+    .hour-row .day { color: var(--gray-600); }
+    .hour-row .time { font-weight: 500; color: var(--navy); }
+
+    /* MAP */
+    .map-wrap { border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--gray-200); margin-top: 8px; }
+    .map-wrap iframe { display: block; width: 100%; height: 220px; border: none; }
+
+    /* FORM */
+    .contact-form-wrap { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-lg); padding: 36px 32px; box-shadow: var(--shadow-card); }
+    .form-title { font-family: var(--font-display); font-size: 22px; color: var(--navy); margin-bottom: 6px; }
+    .form-subtitle { font-size: 14px; color: var(--gray-400); margin-bottom: 28px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
+    .form-group label { font-size: 12px; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; color: var(--gray-600); }
+    .form-group input, .form-group select, .form-group textarea { padding: 12px 16px; background: var(--gray-100); border: 1px solid var(--gray-200); border-radius: var(--radius); font-size: 14px; font-family: var(--font-body); color: var(--gray-800); transition: border-color var(--transition), background var(--transition); outline: none; width: 100%; }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--gold); background: var(--white); }
+    .form-group textarea { resize: vertical; min-height: 110px; }
+    .form-submit { width: 100%; padding: 15px; background: var(--navy); color: var(--white); font-size: 14px; font-weight: 500; font-family: var(--font-body); border: none; border-radius: var(--radius); cursor: pointer; transition: background var(--transition), transform var(--transition); letter-spacing: 0.05em; }
+    .form-submit:hover { background: var(--gold); color: var(--navy); transform: translateY(-1px); }
+    .form-disclaimer { font-size: 11px; color: var(--gray-400); text-align: center; margin-top: 12px; line-height: 1.6; }
+    .success-msg { display: none; text-align: center; padding: 24px; background: #f0faf4; border: 1px solid #86efac; border-radius: var(--radius); margin-top: 16px; }
+    .success-msg p { font-size: 14px; color: #15803d; }
+
+    /* FOOTER */
+    footer { background: var(--navy); padding: 52px 5% 28px; border-top: 1px solid rgba(196,154,60,0.2); }
+    .footer-inner { max-width: 1200px; margin: 0 auto; }
+    .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; margin-bottom: 40px; }
+    .footer-logo img { height: 48px; width: auto; filter: brightness(0) invert(1); margin-bottom: 16px; display: block; }
+    .footer-brand p { font-size: 13px; color: rgba(255,255,255,0.45); line-height: 1.8; max-width: 300px; }
+    .footer-col h4 { font-size: 12px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-col ul li a { font-size: 13px; color: rgba(255,255,255,0.5); text-decoration: none; transition: color var(--transition); }
+    .footer-col ul li a:hover { color: var(--gold-light); }
+    .footer-bottom { padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.07); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+    .footer-bottom p { font-size: 12px; color: rgba(255,255,255,0.3); line-height: 1.8; }
+    .footer-bottom a { color: rgba(255,255,255,0.4); text-decoration: none; }
+
+    /* WHATSAPP */
+    .wa-float { position: fixed; bottom: 28px; right: 28px; z-index: 200; width: 52px; height: 52px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(37,211,102,0.4); text-decoration: none; transition: transform var(--transition), box-shadow var(--transition); }
+    .wa-float:hover { transform: scale(1.1); box-shadow: 0 8px 30px rgba(37,211,102,0.5); }
+    .wa-float svg { width: 26px; height: 26px; fill: white; }
+    .wa-tooltip { position: absolute; right: 62px; top: 50%; transform: translateY(-50%); background: var(--navy); color: var(--white); font-size: 12px; padding: 6px 12px; border-radius: var(--radius); white-space: nowrap; opacity: 0; pointer-events: none; transition: opacity var(--transition); font-family: var(--font-body); }
+    .wa-float:hover .wa-tooltip { opacity: 1; }
+
+    /* ANIMATIONS */
+    .fade-up { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .fade-up.visible { opacity: 1; transform: none; }
+    .fade-up:nth-child(2) { transition-delay: 0.1s; }
+    .fade-up:nth-child(3) { transition-delay: 0.2s; }
+    .fade-up:nth-child(4) { transition-delay: 0.3s; }
+    .fade-up:nth-child(5) { transition-delay: 0.4s; }
+    .fade-up:nth-child(6) { transition-delay: 0.5s; }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .hero-content { grid-template-columns: 1fr; gap: 40px; }
+      .hero-card { display: none; }
+      .about-grid { grid-template-columns: 1fr; }
+      .services-grid { grid-template-columns: 1fr 1fr; }
+      .pricing-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
+      .testimonials-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr; gap: 32px; }
+    }
+    @media (max-width: 600px) {
+      section { padding: 64px 5%; }
+      .services-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .hero-stats { gap: 20px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .about-img-wrap { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#hero" class="nav-logo">
+    <img src="images/logo.png" alt="By The Law Inc" />
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about" data-en="About" data-es="Nosotros">About</a></li>
+    <li><a href="#services" data-en="Services" data-es="Servicios">Services</a></li>
+    <li><a href="#pricing" data-en="Pricing" data-es="Precios">Pricing</a></li>
+    <li><a href="#testimonials" data-en="Reviews" data-es="Reseñas">Reviews</a></li>
+    <li><a href="#contact" class="nav-cta" data-en="Free Consultation" data-es="Consulta Gratis">Free Consultation</a></li>
+  </ul>
+  <div class="lang-switcher">
+    <button class="lang-btn active" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" onclick="setLang('es')">ES</button>
+  </div>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" onclick="toggleMenu()" data-en="About" data-es="Nosotros">About</a>
+  <a href="#services" onclick="toggleMenu()" data-en="Services" data-es="Servicios">Services</a>
+  <a href="#pricing" onclick="toggleMenu()" data-en="Pricing" data-es="Precios">Pricing</a>
+  <a href="#testimonials" onclick="toggleMenu()" data-en="Reviews" data-es="Reseñas">Reviews</a>
+  <a href="#contact" onclick="toggleMenu()" data-en="Free Consultation" data-es="Consulta Gratis">Free Consultation</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg-img"></div>
+  <div class="hero-bg-overlay"></div>
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-content">
+    <div class="hero-left">
+      <div class="hero-welcome-wrap">
+        <span class="hero-welcome-label" data-en="Welcome to" data-es="Bienvenidos a">Welcome to</span>
+        <img src="images/logo.png" alt="By The Law Inc" class="hero-logo-large" />
+      </div>
+      <div class="hero-badge" data-en="Sacramento, CA · Se Habla Español" data-es="Sacramento, CA · Se Habla Español">Sacramento, CA · Se Habla Español</div>
+      <h1 class="hero-title" data-en="Legal Documentation &amp;<br><em>Processing Services</em>" data-es="Documentación Legal &amp;<br><em>Servicios de Tramitación</em>">Legal Documentation &amp;<br><em>Processing Services</em></h1>
+      <p class="hero-subtitle" data-en="Affordable, accurate legal document preparation for those who choose to <strong>represent themselves</strong>. We make the legal system accessible to everyone." data-es="Preparación de documentos legales asequible y precisa para quienes eligen <strong>representarse a sí mismos</strong>. Hacemos el sistema legal accesible para todos.">Affordable, accurate legal document preparation for those who choose to <strong>represent themselves</strong>. We make the legal system accessible to everyone.</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-gold" data-en="Free Consultation" data-es="Consulta Gratis">Free Consultation</a>
+        <a href="#services" class="btn-outline" data-en="View Services" data-es="Ver Servicios">View Services</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-num">15+</div>
+          <div class="stat-label" data-en="Years experience" data-es="Años de experiencia">Years experience</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">6</div>
+          <div class="stat-label" data-en="Core services" data-es="Servicios principales">Core services</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">LDA</div>
+          <div class="stat-label" data-en="Registered · Sac County" data-es="Registrado · Condado Sac">Registered · Sac County</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="hero-card-title" data-en="What we can help with" data-es="Cómo podemos ayudarte">What we can help with</div>
+      <ul class="hero-service-list">
+        <li data-en="Divorce, Child Custody &amp; Support" data-es="Divorcio, Custodia y Manutención">Divorce, Child Custody &amp; Support</li>
+        <li data-en="Restraining Orders" data-es="Órdenes de Restricción">Restraining Orders</li>
+        <li data-en="Name Change &amp; Corrections" data-es="Cambio de Nombre y Correcciones">Name Change &amp; Corrections</li>
+        <li data-en="Notary &amp; Apostille Services" data-es="Servicios Notariales y Apostilla">Notary &amp; Apostille Services</li>
+        <li data-en="Live Scan Fingerprinting" data-es="Huellas Dactilares Live Scan">Live Scan Fingerprinting</li>
+        <li data-en="Certified Translations (USCIS)" data-es="Traducciones Certificadas (USCIS)">Certified Translations (USCIS)</li>
+        <li data-en="Process Server" data-es="Notificador Judicial">Process Server</li>
+        <li data-en="Financial Counseling" data-es="Asesoría Financiera">Financial Counseling</li>
+      </ul>
+      <div class="hero-contact-row">
+        <div class="hero-contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
+          <a href="tel:+19165502828">(916) 550-2828</a>
+        </div>
+        <div class="hero-contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+          <a href="mailto:info@bythelawinc.com">info@bythelawinc.com</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-img-wrap">
+        <img src="images/about.jpg" alt="By The Law Inc team" />
+        <div class="about-accent"></div>
+        <div class="about-accent2"></div>
+      </div>
+      <div class="about-content">
+        <span class="section-label">Our Story</span>
+        <h2 class="section-title">Empowering You to Navigate the Legal System</h2>
+        <div class="divider"></div>
+        <p style="margin-top:20px; font-size:15px; color:var(--gray-600); line-height:1.9;">At By The Law Inc, we believe everyone deserves access to the legal system — regardless of budget. We specialize in providing affordable, high-quality legal document preparation for individuals who choose to represent themselves.</p>
+        <p style="margin-top:14px; font-size:15px; color:var(--gray-600); line-height:1.9;">Our mission is to be a trusted, practical, and cost-effective alternative to traditional legal representation. With a focus on accuracy, efficiency, and compliance, we empower self-represented clients with confidence and peace of mind.</p>
+        <div class="about-values">
+          <div class="value-chip">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            Accuracy & Compliance
+          </div>
+          <div class="value-chip">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            Fast Turnaround
+          </div>
+          <div class="value-chip">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75"/></svg>
+            Affordable Rates
+          </div>
+          <div class="value-chip">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M10.5 21l5.25-11.25L21 21m-9-3h7.5M3 5.621a48.474 48.474 0 016-.371m0 0c1.12 0 2.233.038 3.334.114M9 5.25V3m3.334 2.364C11.176 10.658 7.69 15.08 3 17.502m9.334-12.138c.896.061 1.785.147 2.666.257m-4.589 8.495a18.023 18.023 0 01-3.827-5.802"/></svg>
+            Se Habla Español
+          </div>
+        </div>
+        <div class="about-memberships">
+          <div class="memberships-label">Proud Member of</div>
+          <div class="memberships-logos">
+            <img src="images/logo-naccc.png" alt="NACCC" title="National Association of Certified Credit Counselors" />
+            <img src="images/logo-nna.png" alt="National Notary Association" title="National Notary Association" />
+            <img src="images/logo-aba.png" alt="ABA Member 2024" title="American Bar Association" />
+            <img src="images/logo-bbb.jpg" alt="Better Business Bureau" title="Better Business Bureau" />
+            <img src="images/logo-svp.png" alt="Sac Valley Paralegal" title="Sacramento Valley Paralegal Association" />
+            <img src="images/logo-scba.png" alt="Sacramento County Bar Association" title="Sacramento County Bar Association" />
+            <img src="images/logo-calda.png" alt="CALDA" title="California Association of Legal Document Assistants" />
+            <img src="images/logo-sacramento-legal.jpg" alt="Sacramento Legal" title="Sacramento Legal" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-label">What We Offer</span>
+      <h2 class="section-title">Our Services</h2>
+      <div class="divider"></div>
+      <p class="section-desc" style="margin-top:16px;">Comprehensive legal document assistance for individuals and families in Sacramento County.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card fade-up">
+        <div class="service-card-img-wrap">
+          <img src="images/service-family-law.jpg" alt="Family Law" class="service-card-img" />
+        </div>
+        <div class="service-card-body">
+          <h3>Family Law</h3>
+          <p>Divorce, child custody, visitation, support agreements, marital prenuptial & settlement agreements, and guardianship of minor children.</p>
+          <div class="service-tags">
+            <span class="tag">Divorce</span><span class="tag">Child Custody</span><span class="tag">Support</span><span class="tag">Guardianship</span>
+          </div>
+        </div>
+      </div>
+      <div class="service-card fade-up">
+        <div class="service-card-img-wrap">
+          <img src="images/service-notary.jpg" alt="Notary Services" class="service-card-img" />
+        </div>
+        <div class="service-card-body">
+          <h3>Notary Services</h3>
+          <p>General notarizations, real estate documents (Grant Deed, TOD), powers of attorney, apostille & authentication for international documents.</p>
+          <div class="service-tags">
+            <span class="tag">Apostille</span><span class="tag">POA</span><span class="tag">Real Estate</span><span class="tag">Affidavits</span>
+          </div>
+        </div>
+      </div>
+      <div class="service-card fade-up">
+        <div class="service-card-img-wrap">
+          <img src="images/service-process.jpg" alt="Process Server" class="service-card-img" />
+        </div>
+        <div class="service-card-body">
+          <h3>Process Server</h3>
+          <p>Professional service of process for family law cases, small claims, restraining orders, and matters requiring a registered process agent.</p>
+          <div class="service-tags">
+            <span class="tag">Family Law</span><span class="tag">Small Claims</span><span class="tag">Restraining Orders</span>
+          </div>
+        </div>
+      </div>
+      <div class="service-card fade-up">
+        <div class="service-card-img-wrap">
+          <img src="images/service-livescan.jpg" alt="Live Scan Fingerprinting" class="service-card-img" />
+        </div>
+        <div class="service-card-body">
+          <h3>Live Scan Fingerprinting</h3>
+          <p>Electronic fingerprinting transmitted directly to DOJ, FBI, and CACI. Fast results for employment, certification, and licensing needs.</p>
+          <div class="service-tags">
+            <span class="tag">Employment</span><span class="tag">Licensing</span><span class="tag">DOJ / FBI</span>
+          </div>
+        </div>
+      </div>
+      <div class="service-card fade-up">
+        <div class="service-card-img-wrap">
+          <img src="images/service-translation.jpg" alt="Certified Translations" class="service-card-img" />
+        </div>
+        <div class="service-card-body">
+          <h3>Certified Translations</h3>
+          <p>Accurate translations meeting official standards for government and legal use — immigration docs (USCIS), birth, marriage, divorce certificates, wills, and more.</p>
+          <div class="service-tags">
+            <span class="tag">USCIS</span><span class="tag">Certificates</span><span class="tag">Legal Docs</span>
+          </div>
+        </div>
+      </div>
+      <div class="service-card fade-up">
+        <div class="service-card-img-wrap">
+          <img src="images/service-financial.jpg" alt="Financial Counseling" class="service-card-img" />
+        </div>
+        <div class="service-card-body">
+          <h3>Financial Counseling</h3>
+          <p>We help clients navigate complex personal finance challenges — poor credit, financial distress, and debt — teaching skills to improve financial well-being.</p>
+          <div class="service-tags">
+            <span class="tag">Credit Repair</span><span class="tag">Debt Help</span><span class="tag">Financial Wellness</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-label">Transparent Pricing</span>
+      <h2 class="section-title light">Affordable for Everyone</h2>
+      <div class="divider"></div>
+      <p class="section-desc light" style="margin-top:16px;">No surprises. Every case is different — contact us for an exact quote. First consultation is always free.</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <div class="pricing-label">Get started</div>
+        <h3>Free Consultation</h3>
+        <div class="pricing-price">$0 <span>/ first call</span></div>
+        <div class="pricing-note">No commitment required</div>
+        <ul class="pricing-features">
+          <li>Review your situation</li>
+          <li>Explain what documents you need</li>
+          <li>Answer your questions</li>
+          <li>Provide a personalized quote</li>
+        </ul>
+        <a href="#contact" class="btn-outline" style="display:block; text-align:center; padding:12px;">Book Now</a>
+      </div>
+      <div class="pricing-card highlight">
+        <div class="pricing-label">Most requested</div>
+        <h3>Document Preparation</h3>
+        <div class="pricing-price">From $X <span>/ case</span></div>
+        <div class="pricing-note">Depends on case complexity</div>
+        <ul class="pricing-features">
+          <li>Divorce & family law documents</li>
+          <li>Restraining orders</li>
+          <li>Guardianship paperwork</li>
+          <li>Name change & corrections</li>
+          <li>Court filing assistance</li>
+        </ul>
+        <a href="#contact" class="btn-gold" style="display:block; text-align:center; padding:12px;">Get a Quote</a>
+      </div>
+      <div class="pricing-card">
+        <div class="pricing-label">Additional services</div>
+        <h3>Notary & More</h3>
+        <div class="pricing-price">From $X <span>/ doc</span></div>
+        <div class="pricing-note">Per document or service</div>
+        <ul class="pricing-features">
+          <li>Notarizations & apostilles</li>
+          <li>Live scan fingerprinting</li>
+          <li>Certified translations</li>
+          <li>Process serving</li>
+          <li>Financial counseling sessions</li>
+        </ul>
+        <a href="tel:+19165502828" class="btn-outline" style="display:block; text-align:center; padding:12px;">Call for Rates</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-label">Client Reviews</span>
+      <h2 class="section-title">What Our Clients Say</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card fade-up">
+        <div class="stars"><svg viewBox="0 0 24 24"><path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/></svg><svg viewBox="0 0 24 24"><path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/></svg><svg viewBox="0 0 24 24"><path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/></svg><svg viewBox="0 0 24 24"><path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/></svg><svg viewBox="0 0 24 24"><path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/></svg></div>
+        <p class="testimonial-text">"They helped me with my divorce quickly and professionally. The process was smooth and they explained everything step by step. Highly recommended!"</p>
+        <div class="testimonial-author"><div class="author-avatar">MG</div><div><div class="author-name">María G.</div><div class="author-detail">Sacramento, CA · Divorce</div></div></div>
+      </div>
+      <div class="testimonial-card fade-up">
+        <div class="stars"><svg viewBox="0 0 24 24"><path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/></svg><svg viewBox="0 0 24 24"><path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/></svg><svg viewBox="0 0 24 24"><path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/></svg><svg viewBox="0 0 24 24"><path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/></svg><svg viewBox="0 0 24 24"><path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/></svg></div>
+        <p class="testimonial-text">"Excellent service — they explain everything step by step. Very accessible prices. I had my name change done in no time. I'll definitely return."</p>
+        <div class="testimonial-author"><div class="author-avatar">CR</div><div><div class="author-name">Carlos R.</div><div class="author-detail">Sacramento, CA · Name Change</div></div></div>
+      </div>
+      <div class="testimonial-card fade-up">
+        <div class="stars"><svg viewBox="0 0 24 24"><path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/></svg><svg viewBox="0 0 24 24"><path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/></svg><svg viewBox="0 0 24 24"><path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/></svg><svg viewBox="0 0 24 24"><path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/></svg><svg viewBox="0 0 24 24"><path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/></svg></div>
+        <p class="testimonial-text">"I needed an apostille for documents going to Mexico and they handled everything perfectly. Fast, professional and bilingual. Couldn't ask for more."</p>
+        <div class="testimonial-author"><div class="author-avatar">AL</div><div><div class="author-name">Ana L.</div><div class="author-detail">Sacramento, CA · Apostille</div></div></div>
+      </div>
+    </div>
+    <div class="testimonials-cta">
+      <p>Replace these with real reviews from your Google Business profile.</p>
+      <a href="https://g.page/r/review" class="btn-gold" target="_blank" rel="noopener">See All Google Reviews</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div>
+          <span class="section-label">Get in Touch</span>
+          <h2 class="section-title">Let's Talk About Your Case</h2>
+          <div class="divider"></div>
+          <p style="margin-top:16px; font-size:15px; color:var(--gray-600); line-height:1.8;">First consultation is free. Tell us what you need and we'll guide you through the next steps.</p>
+        </div>
+        <div class="contact-info-block">
+          <h3>Contact Details</h3>
+          <div class="contact-item">
+            <div class="contact-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg></div>
+            <div class="contact-item-text"><div style="font-size:12px; color:var(--gray-400); margin-bottom:2px;">Phone</div><a href="tel:+19165502828">(916) 550-2828</a></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg></div>
+            <div class="contact-item-text"><div style="font-size:12px; color:var(--gray-400); margin-bottom:2px;">Email</div><a href="mailto:info@bythelawinc.com">info@bythelawinc.com</a></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg></div>
+            <div class="contact-item-text"><div style="font-size:12px; color:var(--gray-400); margin-bottom:2px;">Address</div>2500 Marconi Avenue, Ste. 213<br>Sacramento, CA 95821</div>
+          </div>
+        </div>
+        <div class="contact-info-block">
+          <h3>Business Hours</h3>
+          <div class="hours-grid">
+            <div class="hour-row"><span class="day">Monday</span><span class="time">9am – 5pm</span></div>
+            <div class="hour-row"><span class="day">Tuesday</span><span class="time">9am – 5pm</span></div>
+            <div class="hour-row"><span class="day">Wednesday</span><span class="time">9am – 5pm</span></div>
+            <div class="hour-row"><span class="day">Thursday</span><span class="time">9am – 5pm</span></div>
+            <div class="hour-row"><span class="day">Friday</span><span class="time">9am – 5pm</span></div>
+            <div class="hour-row"><span class="day">Saturday</span><span class="time">By appt.</span></div>
+            <div class="hour-row"><span class="day">Sunday</span><span class="time">Closed</span></div>
+          </div>
+          <p style="font-size:11px; color:var(--gray-400); margin-top:8px;">⚠️ Confirm exact hours with the office before publishing.</p>
+        </div>
+        <!-- GOOGLE MAP -->
+        <div class="contact-info-block">
+          <h3>Find Us</h3>
+          <div class="map-wrap">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3117.983!2d-121.3827!3d38.5916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809ad0a6a1234567%3A0xabcdef!2s2500+Marconi+Ave+Ste+213%2C+Sacramento%2C+CA+95821!5e0!3m2!1sen!2sus!4v1"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="By The Law Inc location">
+            </iframe>
+          </div>
+          <a href="https://maps.google.com/?q=2500+Marconi+Ave+Ste+213+Sacramento+CA+95821" target="_blank" rel="noopener" style="display:inline-block; margin-top:10px; font-size:13px; color:var(--gold); text-decoration:none;">Open in Google Maps →</a>
+        </div>
+      </div>
+
+      <!-- NETLIFY FORM -->
+      <div class="contact-form-wrap">
+        <div class="form-title">Send Us a Message</div>
+        <div class="form-subtitle">We'll get back to you within 1 business day.</div>
+        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="contactForm">
+          <input type="hidden" name="form-name" value="contact" />
+          <p style="display:none;"><input name="bot-field" /></p>
+          <div class="form-row">
+            <div class="form-group"><label for="fname">First Name</label><input type="text" id="fname" name="first_name" placeholder="María" required /></div>
+            <div class="form-group"><label for="lname">Last Name</label><input type="text" id="lname" name="last_name" placeholder="García" required /></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label for="email">Email</label><input type="email" id="email" name="email" placeholder="you@email.com" required /></div>
+            <div class="form-group"><label for="phone">Phone</label><input type="tel" id="phone" name="phone" placeholder="(916) 000-0000" /></div>
+          </div>
+          <div class="form-group">
+            <label for="service">Service Needed</label>
+            <select id="service" name="service" required>
+              <option value="" disabled selected>Select a service...</option>
+              <option>Family Law (Divorce / Custody / Support)</option>
+              <option>Notary Services</option>
+              <option>Process Server</option>
+              <option>Live Scan Fingerprinting</option>
+              <option>Certified Translation</option>
+              <option>Financial Counseling</option>
+              <option>Other / Not sure</option>
+            </select>
+          </div>
+          <div class="form-group"><label for="message">Message</label><textarea id="message" name="message" placeholder="Briefly describe your situation or question..."></textarea></div>
+          <button type="submit" class="form-submit">Send Message →</button>
+          <p class="form-disclaimer">We are not attorneys and cannot provide legal advice. We provide self-help services at your specific direction.<br>Sacramento County LDA Reg. No. 12</p>
+        </form>
+        <div class="success-msg" id="successMsg"><p>✓ Thank you! We received your message and will be in touch within 1 business day.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo"><img src="images/logo.png" alt="By The Law Inc" /></div>
+        <p>Affordable legal document preparation services for self-represented individuals in Sacramento, CA. Se Habla Español.</p>
+        <p style="margin-top:10px; font-size:11px; opacity:0.5;">Sacramento County LDA Reg. No. 12 · Exp. [UPDATE DATE]</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Family Law</a></li>
+          <li><a href="#services">Notary Services</a></li>
+          <li><a href="#services">Process Server</a></li>
+          <li><a href="#services">Live Scan</a></li>
+          <li><a href="#services">Translations</a></li>
+          <li><a href="#services">Financial Counseling</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+19165502828">(916) 550-2828</a></li>
+          <li><a href="mailto:info@bythelawinc.com">info@bythelawinc.com</a></li>
+          <li><a href="https://maps.google.com/?q=2500+Marconi+Ave+Ste+213+Sacramento+CA+95821" target="_blank">2500 Marconi Ave, Ste 213<br>Sacramento CA 95821</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>©2025 By The Law Inc · All rights reserved.<br>We are not attorneys and cannot provide legal advice. Self-help services only at your specific direction.</p>
+      <p><a href="#hero">Back to top ↑</a></p>
+    </div>
+  </div>
+</footer>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/19165502828" class="wa-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <div class="wa-tooltip">Chat on WhatsApp</div>
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+  // ── Scroll & menu ──
+  window.addEventListener('scroll', () => {
+    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40);
+  });
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+
+  // ── Fade-up observer ──
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // ── Form success ──
+  const form = document.getElementById('contactForm');
+  if (form) {
+    form.addEventListener('submit', function() {
+      setTimeout(() => {
+        form.style.display = 'none';
+        document.getElementById('successMsg').style.display = 'block';
+      }, 800);
+    });
+  }
+
+  // ── Translation dictionary ──
+  const translations = {
+    en: {
+      // Nav
+      'nav-about': 'About', 'nav-services': 'Services', 'nav-pricing': 'Pricing',
+      'nav-reviews': 'Reviews', 'nav-cta': 'Free Consultation',
+      // Section labels
+      'label-story': 'Our Story', 'label-services': 'What We Offer',
+      'label-pricing': 'Transparent Pricing', 'label-reviews': 'Client Reviews',
+      'label-contact': 'Get in Touch',
+      // Section titles
+      'title-about': 'Empowering You to Navigate the Legal System',
+      'title-services': 'Our Services',
+      'title-pricing': 'Affordable for Everyone',
+      'title-testimonials': 'What Our Clients Say',
+      'title-contact': "Let's Talk About Your Case",
+      // Descriptions
+      'desc-about': 'Comprehensive legal document assistance for individuals and families in Sacramento County.',
+      'desc-pricing': 'No surprises. Every case is different — contact us for an exact quote. First consultation is always free.',
+      'desc-contact': "First consultation is free. Tell us what you need and we'll guide you through the next steps.",
+      // About paragraphs
+      'about-p1': 'At By The Law Inc, we believe everyone deserves access to the legal system — regardless of budget. We specialize in providing affordable, high-quality legal document preparation for individuals who choose to represent themselves.',
+      'about-p2': 'Our mission is to be a trusted, practical, and cost-effective alternative to traditional legal representation. With a focus on accuracy, efficiency, and compliance, we empower self-represented clients with confidence and peace of mind.',
+      // Values
+      'val-1': 'Accuracy & Compliance', 'val-2': 'Fast Turnaround',
+      'val-3': 'Affordable Rates', 'val-4': 'Se Habla Español',
+      'memberships-label': 'Proud Member of',
+      // Hero
+      'hero-welcome': 'Welcome to',
+      'hero-badge': 'Sacramento, CA · Se Habla Español',
+      'hero-title': 'Legal Documentation &<br><em>Processing Services</em>',
+      'hero-subtitle': 'Affordable, accurate legal document preparation for those who choose to <strong>represent themselves</strong>. We make the legal system accessible to everyone.',
+      'hero-btn-cta': 'Free Consultation', 'hero-btn-services': 'View Services',
+      'stat-1': 'Years experience', 'stat-2': 'Core services', 'stat-3': 'Registered · Sac County',
+      'hero-card-title': 'What we can help with',
+      'svc-1': 'Divorce, Child Custody & Support', 'svc-2': 'Restraining Orders',
+      'svc-3': 'Name Change & Corrections', 'svc-4': 'Notary & Apostille Services',
+      'svc-5': 'Live Scan Fingerprinting', 'svc-6': 'Certified Translations (USCIS)',
+      'svc-7': 'Process Server', 'svc-8': 'Financial Counseling',
+      // Services section
+      'serv-fl-title': 'Family Law',
+      'serv-fl-desc': 'Divorce, child custody, visitation, support agreements, marital prenuptial & settlement agreements, and guardianship of minor children.',
+      'serv-no-title': 'Notary Services',
+      'serv-no-desc': 'General notarizations, real estate documents (Grant Deed, TOD), powers of attorney, apostille & authentication for international documents.',
+      'serv-ps-title': 'Process Server',
+      'serv-ps-desc': 'Professional service of process for family law cases, small claims, restraining orders, and matters requiring a registered process agent.',
+      'serv-ls-title': 'Live Scan Fingerprinting',
+      'serv-ls-desc': 'Electronic fingerprinting transmitted directly to DOJ, FBI, and CACI. Fast results for employment, certification, and licensing needs.',
+      'serv-tr-title': 'Certified Translations',
+      'serv-tr-desc': 'Accurate translations meeting official standards for government and legal use — immigration docs (USCIS), birth, marriage, divorce certificates, wills, and more.',
+      'serv-fi-title': 'Financial Counseling',
+      'serv-fi-desc': 'We help clients navigate complex personal finance challenges — poor credit, financial distress, and debt — teaching skills to improve financial well-being.',
+      // Pricing
+      'price-1-label': 'Get started', 'price-1-title': 'Free Consultation',
+      'price-1-note': 'No commitment required',
+      'price-1-f1': 'Review your situation', 'price-1-f2': 'Explain what documents you need',
+      'price-1-f3': 'Answer your questions', 'price-1-f4': 'Provide a personalized quote',
+      'price-1-btn': 'Book Now',
+      'price-2-label': 'Most requested', 'price-2-title': 'Document Preparation',
+      'price-2-note': 'Depends on case complexity',
+      'price-2-f1': 'Divorce & family law documents', 'price-2-f2': 'Restraining orders',
+      'price-2-f3': 'Guardianship paperwork', 'price-2-f4': 'Name change & corrections',
+      'price-2-f5': 'Court filing assistance', 'price-2-btn': 'Get a Quote',
+      'price-3-label': 'Additional services', 'price-3-title': 'Notary & More',
+      'price-3-note': 'Per document or service',
+      'price-3-f1': 'Notarizations & apostilles', 'price-3-f2': 'Live scan fingerprinting',
+      'price-3-f3': 'Certified translations', 'price-3-f4': 'Process serving',
+      'price-3-f5': 'Financial counseling sessions', 'price-3-btn': 'Call for Rates',
+      // Contact
+      'contact-details-title': 'Contact Details',
+      'contact-phone-label': 'Phone', 'contact-email-label': 'Email', 'contact-addr-label': 'Address',
+      'contact-addr': '2500 Marconi Avenue, Ste. 213<br>Sacramento, CA 95821',
+      'hours-title': 'Business Hours',
+      'hours-note': '⚠️ Confirm exact hours with the office before publishing.',
+      'map-title': 'Find Us', 'map-link': 'Open in Google Maps →',
+      'form-title': 'Send Us a Message',
+      'form-subtitle': "We'll get back to you within 1 business day.",
+      'form-fname': 'First Name', 'form-lname': 'Last Name',
+      'form-email': 'Email', 'form-phone': 'Phone',
+      'form-service': 'Service Needed', 'form-service-placeholder': 'Select a service...',
+      'form-message': 'Message', 'form-msg-placeholder': 'Briefly describe your situation or question...',
+      'form-submit': 'Send Message →',
+      'form-disclaimer': 'We are not attorneys and cannot provide legal advice. We provide self-help services at your specific direction.<br>Sacramento County LDA Reg. No. 12',
+      'success-msg': '✓ Thank you! We received your message and will be in touch within 1 business day.',
+      'reviews-note': 'Replace these with real reviews from your Google Business profile.',
+      'reviews-btn': 'See All Google Reviews',
+      // Footer
+      'footer-brand': 'Affordable legal document preparation services for self-represented individuals in Sacramento, CA. Se Habla Español.',
+      'footer-services': 'Services', 'footer-contact': 'Contact',
+      'footer-copy': '©2026 By The Law Inc · All rights reserved.<br>We are not attorneys and cannot provide legal advice. Self-help services only at your specific direction.',
+      'footer-top': 'Back to top ↑',
+      // Hours
+      'h-mon':'Monday','h-tue':'Tuesday','h-wed':'Wednesday','h-thu':'Thursday',
+      'h-fri':'Friday','h-sat':'Saturday','h-sun':'Sunday',
+      't-mon':'9am – 5pm','t-tue':'9am – 5pm','t-wed':'9am – 5pm','t-thu':'9am – 5pm',
+      't-fri':'9am – 5pm','t-sat':'By appt.','t-sun':'Closed',
+      // Service options
+      'opt-1':'Family Law (Divorce / Custody / Support)','opt-2':'Notary Services',
+      'opt-3':'Process Server','opt-4':'Live Scan Fingerprinting',
+      'opt-5':'Certified Translation','opt-6':'Financial Counseling','opt-7':'Other / Not sure',
+      'wa-tooltip': 'Chat on WhatsApp',
+    },
+    es: {
+      'nav-about': 'Nosotros', 'nav-services': 'Servicios', 'nav-pricing': 'Precios',
+      'nav-reviews': 'Reseñas', 'nav-cta': 'Consulta Gratis',
+      'label-story': 'Nuestra Historia', 'label-services': 'Lo Que Ofrecemos',
+      'label-pricing': 'Precios Transparentes', 'label-reviews': 'Reseñas de Clientes',
+      'label-contact': 'Contáctenos',
+      'title-about': 'Empoderándote para Navegar el Sistema Legal',
+      'title-services': 'Nuestros Servicios',
+      'title-pricing': 'Accesible para Todos',
+      'title-testimonials': 'Lo Que Dicen Nuestros Clientes',
+      'title-contact': 'Hablemos de Tu Caso',
+      'desc-about': 'Asistencia completa con documentos legales para personas y familias en el Condado de Sacramento.',
+      'desc-pricing': 'Sin sorpresas. Cada caso es diferente — contáctenos para un presupuesto exacto. La primera consulta es siempre gratis.',
+      'desc-contact': 'La primera consulta es gratis. Dinos qué necesitas y te guiaremos en los próximos pasos.',
+      'about-p1': 'En By The Law Inc, creemos que todos merecen acceso al sistema legal, sin importar su presupuesto. Nos especializamos en la preparación de documentos legales asequibles y de alta calidad para quienes eligen representarse a sí mismos.',
+      'about-p2': 'Nuestra misión es ser una alternativa confiable, práctica y económica a la representación legal tradicional. Con enfoque en la precisión, eficiencia y cumplimiento, empoderamos a nuestros clientes con confianza y tranquilidad.',
+      'val-1': 'Precisión y Cumplimiento', 'val-2': 'Entrega Rápida',
+      'val-3': 'Precios Accesibles', 'val-4': 'Se Habla Español',
+      'memberships-label': 'Miembros Orgullosos de',
+      'hero-welcome': 'Bienvenidos a',
+      'hero-badge': 'Sacramento, CA · Se Habla Español',
+      'hero-title': 'Documentación Legal &<br><em>Servicios de Tramitación</em>',
+      'hero-subtitle': 'Preparación de documentos legales asequible y precisa para quienes eligen <strong>representarse a sí mismos</strong>. Hacemos el sistema legal accesible para todos.',
+      'hero-btn-cta': 'Consulta Gratis', 'hero-btn-services': 'Ver Servicios',
+      'stat-1': 'Años de experiencia', 'stat-2': 'Servicios principales', 'stat-3': 'Registrado · Condado Sac',
+      'hero-card-title': 'Cómo podemos ayudarte',
+      'svc-1': 'Divorcio, Custodia y Manutención', 'svc-2': 'Órdenes de Restricción',
+      'svc-3': 'Cambio de Nombre y Correcciones', 'svc-4': 'Servicios Notariales y Apostilla',
+      'svc-5': 'Huellas Dactilares Live Scan', 'svc-6': 'Traducciones Certificadas (USCIS)',
+      'svc-7': 'Notificador Judicial', 'svc-8': 'Asesoría Financiera',
+      'serv-fl-title': 'Derecho Familiar',
+      'serv-fl-desc': 'Divorcio, custodia de hijos, visitas, acuerdos de manutención, acuerdos prenupciales y de divorcio, y tutela de menores.',
+      'serv-no-title': 'Servicios Notariales',
+      'serv-no-desc': 'Notarizaciones generales, documentos de bienes raíces (Grant Deed, TOD), poderes notariales, apostilla y autenticación de documentos internacionales.',
+      'serv-ps-title': 'Notificador Judicial',
+      'serv-ps-desc': 'Servicio profesional de notificación para casos de derecho familiar, reclamaciones menores, órdenes de restricción y asuntos que requieren un agente de proceso registrado.',
+      'serv-ls-title': 'Huellas Dactilares Live Scan',
+      'serv-ls-desc': 'Huellas electrónicas transmitidas directamente al DOJ, FBI y CACI. Resultados rápidos para empleo, certificación y licencias.',
+      'serv-tr-title': 'Traducciones Certificadas',
+      'serv-tr-desc': 'Traducciones precisas que cumplen con los estándares oficiales para uso gubernamental y legal — docs de inmigración (USCIS), actas de nacimiento, matrimonio, divorcio, testamentos y más.',
+      'serv-fi-title': 'Asesoría Financiera',
+      'serv-fi-desc': 'Ayudamos a los clientes con problemas financieros complejos — mal crédito, deudas y dificultades económicas — enseñando habilidades para mejorar su bienestar financiero.',
+      'price-1-label': 'Para empezar', 'price-1-title': 'Consulta Gratuita',
+      'price-1-note': 'Sin compromiso',
+      'price-1-f1': 'Revisamos tu situación', 'price-1-f2': 'Explicamos los documentos necesarios',
+      'price-1-f3': 'Respondemos tus preguntas', 'price-1-f4': 'Te damos un presupuesto personalizado',
+      'price-1-btn': 'Reservar',
+      'price-2-label': 'Más solicitado', 'price-2-title': 'Preparación de Documentos',
+      'price-2-note': 'Depende de la complejidad del caso',
+      'price-2-f1': 'Documentos de divorcio y familia', 'price-2-f2': 'Órdenes de restricción',
+      'price-2-f3': 'Trámites de tutela', 'price-2-f4': 'Cambio de nombre y correcciones',
+      'price-2-f5': 'Asistencia con presentación al tribunal', 'price-2-btn': 'Pedir Presupuesto',
+      'price-3-label': 'Servicios adicionales', 'price-3-title': 'Notaría y Más',
+      'price-3-note': 'Por documento o servicio',
+      'price-3-f1': 'Notarizaciones y apostillas', 'price-3-f2': 'Huellas dactilares Live Scan',
+      'price-3-f3': 'Traducciones certificadas', 'price-3-f4': 'Notificación judicial',
+      'price-3-f5': 'Sesiones de asesoría financiera', 'price-3-btn': 'Llamar para Precios',
+      'contact-details-title': 'Datos de Contacto',
+      'contact-phone-label': 'Teléfono', 'contact-email-label': 'Correo', 'contact-addr-label': 'Dirección',
+      'contact-addr': '2500 Marconi Avenue, Ste. 213<br>Sacramento, CA 95821',
+      'hours-title': 'Horario de Atención',
+      'hours-note': '⚠️ Confirma el horario exacto con la oficina antes de publicar.',
+      'map-title': 'Encuéntranos', 'map-link': 'Abrir en Google Maps →',
+      'form-title': 'Envíanos un Mensaje',
+      'form-subtitle': 'Te responderemos dentro de 1 día hábil.',
+      'form-fname': 'Nombre', 'form-lname': 'Apellido',
+      'form-email': 'Correo electrónico', 'form-phone': 'Teléfono',
+      'form-service': 'Servicio que necesita', 'form-service-placeholder': 'Selecciona un servicio...',
+      'form-message': 'Mensaje', 'form-msg-placeholder': 'Describe brevemente tu situación o pregunta...',
+      'form-submit': 'Enviar Mensaje →',
+      'form-disclaimer': 'No somos abogados y no podemos dar asesoría legal. Solo ofrecemos servicios de autoayuda a tu dirección específica.<br>Sacramento County LDA Reg. No. 12',
+      'success-msg': '✓ ¡Gracias! Recibimos tu mensaje y te contactaremos en 1 día hábil.',
+      'reviews-note': 'Reemplaza estas con reseñas reales de tu perfil de Google Business.',
+      'reviews-btn': 'Ver Todas las Reseñas de Google',
+      'footer-brand': 'Servicios asequibles de preparación de documentos legales para personas en Sacramento, CA. Se Habla Español.',
+      'footer-services': 'Servicios', 'footer-contact': 'Contacto',
+      'footer-copy': '©2026 By The Law Inc · Todos los derechos reservados.<br>No somos abogados y no podemos dar asesoría legal. Solo servicios de autoayuda a tu dirección específica.',
+      'footer-top': 'Volver arriba ↑',
+      'h-mon':'Lunes','h-tue':'Martes','h-wed':'Miércoles','h-thu':'Jueves',
+      'h-fri':'Viernes','h-sat':'Sábado','h-sun':'Domingo',
+      't-mon':'9am – 5pm','t-tue':'9am – 5pm','t-wed':'9am – 5pm','t-thu':'9am – 5pm',
+      't-fri':'9am – 5pm','t-sat':'Con cita.','t-sun':'Cerrado',
+      'opt-1':'Derecho Familiar (Divorcio / Custodia / Manutención)','opt-2':'Servicios Notariales',
+      'opt-3':'Notificador Judicial','opt-4':'Huellas Dactilares Live Scan',
+      'opt-5':'Traducción Certificada','opt-6':'Asesoría Financiera','opt-7':'Otro / No estoy seguro',
+      'wa-tooltip': 'Chatear por WhatsApp',
+    }
+  };
+
+  let currentLang = 'en';
+
+  function setLang(lang) {
+    currentLang = lang;
+    const t = translations[lang];
+    document.documentElement.lang = lang;
+
+    // Lang buttons
+    document.querySelectorAll('.lang-btn').forEach(b => {
+      b.classList.toggle('active', b.textContent === lang.toUpperCase());
+    });
+
+    // Nav links
+    const navLinks = document.querySelectorAll('.nav-links a, .mobile-menu a');
+    const navKeys = ['nav-about','nav-services','nav-pricing','nav-reviews','nav-cta'];
+    navLinks.forEach((a, i) => { if (navKeys[i]) a.textContent = t[navKeys[i]]; });
+
+    // Helper to set innerHTML of element by id
+    const el = (id, key) => { const e = document.getElementById(id); if (e && t[key]) e.innerHTML = t[key]; };
+    const txt = (id, key) => { const e = document.getElementById(id); if (e && t[key]) e.textContent = t[key]; };
+
+    // Apply all translations via data-key attributes
+    document.querySelectorAll('[data-key]').forEach(e => {
+      const key = e.getAttribute('data-key');
+      if (t[key] !== undefined) {
+        if (e.tagName === 'INPUT' || e.tagName === 'TEXTAREA') {
+          e.placeholder = t[key];
+        } else if (e.tagName === 'OPTION') {
+          e.textContent = t[key];
+        } else if (t[key].includes('<')) {
+          e.innerHTML = t[key];
+        } else {
+          e.textContent = t[key];
+        }
+      }
+    });
+  }
+
+  // Attach data-key to all translatable DOM elements after page loads
+  window.addEventListener('DOMContentLoaded', () => {
+    const map = [
+      // Section labels
+      ['.section-label[data-section="story"]', 'label-story'],
+      // We'll use a simpler approach: tag elements with IDs
+    ];
+
+    // Tag elements programmatically
+    function tag(selector, key) {
+      const el = document.querySelector(selector);
+      if (el) el.setAttribute('data-key', key);
+    }
+    function tagAll(selector, keys) {
+      document.querySelectorAll(selector).forEach((el, i) => {
+        if (keys[i]) el.setAttribute('data-key', keys[i]);
+      });
+    }
+
+    // Hero
+    tag('.hero-welcome-label', 'hero-welcome');
+    tag('.hero-badge', 'hero-badge');
+    tag('.hero-title', 'hero-title');
+    tag('.hero-subtitle', 'hero-subtitle');
+    const heroBtns = document.querySelectorAll('.hero-btns a');
+    if (heroBtns[0]) heroBtns[0].setAttribute('data-key','hero-btn-cta');
+    if (heroBtns[1]) heroBtns[1].setAttribute('data-key','hero-btn-services');
+    const stats = document.querySelectorAll('.stat-label');
+    ['stat-1','stat-2','stat-3'].forEach((k,i) => { if(stats[i]) stats[i].setAttribute('data-key',k); });
+    tag('.hero-card-title','hero-card-title');
+    const svcItems = document.querySelectorAll('.hero-service-list li');
+    ['svc-1','svc-2','svc-3','svc-4','svc-5','svc-6','svc-7','svc-8'].forEach((k,i) => { if(svcItems[i]) svcItems[i].setAttribute('data-key',k); });
+
+    // About
+    const sectionLabels = document.querySelectorAll('.section-label');
+    const labelKeys = ['label-story','label-services','label-pricing','label-reviews','label-contact'];
+    sectionLabels.forEach((el, i) => { if(labelKeys[i]) el.setAttribute('data-key', labelKeys[i]); });
+
+    const sectionTitles = document.querySelectorAll('.section-title');
+    const titleKeys = ['title-about','title-services','title-pricing','title-testimonials','title-contact'];
+    sectionTitles.forEach((el, i) => { if(titleKeys[i]) el.setAttribute('data-key', titleKeys[i]); });
+
+    const aboutPs = document.querySelectorAll('#about p');
+    if(aboutPs[0]) aboutPs[0].setAttribute('data-key','about-p1');
+    if(aboutPs[1]) aboutPs[1].setAttribute('data-key','about-p2');
+
+    const valSpans = document.querySelectorAll('.value-chip span');
+    ['val-1','val-2','val-3','val-4'].forEach((k,i)=>{ if(valSpans[i]) valSpans[i].setAttribute('data-key',k); });
+    // Wrap value chip text if not already wrapped
+    document.querySelectorAll('.value-chip').forEach((chip, i) => {
+      if (!chip.querySelector('span[data-key]')) {
+        const key = 'val-'+(i+1);
+        const nodes = [...chip.childNodes].filter(n => n.nodeType === 3 && n.textContent.trim());
+        if (nodes.length) {
+          const span = document.createElement('span');
+          span.setAttribute('data-key', key);
+          span.textContent = nodes[0].textContent.trim();
+          nodes[0].replaceWith(span);
+        }
+      }
+    });
+
+    tag('.memberships-label','memberships-label');
+
+    // Section descs
+    const descs = document.querySelectorAll('.section-desc');
+    if(descs[0]) descs[0].setAttribute('data-key','desc-about');
+    if(descs[1]) descs[1].setAttribute('data-key','desc-pricing');
+
+    // Services cards
+    const servCards = document.querySelectorAll('.service-card-body');
+    const servMap = [
+      ['serv-fl-title','serv-fl-desc'],['serv-no-title','serv-no-desc'],
+      ['serv-ps-title','serv-ps-desc'],['serv-ls-title','serv-ls-desc'],
+      ['serv-tr-title','serv-tr-desc'],['serv-fi-title','serv-fi-desc'],
+    ];
+    servCards.forEach((card, i) => {
+      if (!servMap[i]) return;
+      const h3 = card.querySelector('h3');
+      const p = card.querySelector('p');
+      if (h3) h3.setAttribute('data-key', servMap[i][0]);
+      if (p) p.setAttribute('data-key', servMap[i][1]);
+    });
+
+    // Pricing cards
+    const pCards = document.querySelectorAll('.pricing-card');
+    const pMap = [
+      ['price-1-label','price-1-title','price-1-note',['price-1-f1','price-1-f2','price-1-f3','price-1-f4'],'price-1-btn'],
+      ['price-2-label','price-2-title','price-2-note',['price-2-f1','price-2-f2','price-2-f3','price-2-f4','price-2-f5'],'price-2-btn'],
+      ['price-3-label','price-3-title','price-3-note',['price-3-f1','price-3-f2','price-3-f3','price-3-f4','price-3-f5'],'price-3-btn'],
+    ];
+    pCards.forEach((card, i) => {
+      if (!pMap[i]) return;
+      const label = card.querySelector('.pricing-label');
+      const title = card.querySelector('h3');
+      const note = card.querySelector('.pricing-note');
+      const feats = card.querySelectorAll('.pricing-features li');
+      const btn = card.querySelector('a');
+      if(label) label.setAttribute('data-key', pMap[i][0]);
+      if(title) title.setAttribute('data-key', pMap[i][1]);
+      if(note) note.setAttribute('data-key', pMap[i][2]);
+      feats.forEach((f, j) => { if(pMap[i][3][j]) f.setAttribute('data-key', pMap[i][3][j]); });
+      if(btn) btn.setAttribute('data-key', pMap[i][4]);
+    });
+
+    // Contact section
+    const contactInfoBlocks = document.querySelectorAll('.contact-info-block h3');
+    if(contactInfoBlocks[0]) contactInfoBlocks[0].setAttribute('data-key','contact-details-title');
+    if(contactInfoBlocks[1]) contactInfoBlocks[1].setAttribute('data-key','hours-title');
+    if(contactInfoBlocks[2]) contactInfoBlocks[2].setAttribute('data-key','map-title');
+
+    const contactLabels = document.querySelectorAll('.contact-item-text > div');
+    ['contact-phone-label','contact-email-label','contact-addr-label'].forEach((k,i)=>{ if(contactLabels[i]) contactLabels[i].setAttribute('data-key',k); });
+
+    const addrText = document.querySelector('.contact-item-text');
+    // hours
+    const dayEls = document.querySelectorAll('.hour-row .day');
+    const timeEls = document.querySelectorAll('.hour-row .time');
+    const dayKeys = ['h-mon','h-tue','h-wed','h-thu','h-fri','h-sat','h-sun'];
+    const timeKeys = ['t-mon','t-tue','t-wed','t-thu','t-fri','t-sat','t-sun'];
+    dayEls.forEach((el,i) => { if(dayKeys[i]) el.setAttribute('data-key',dayKeys[i]); });
+    timeEls.forEach((el,i) => { if(timeKeys[i]) el.setAttribute('data-key',timeKeys[i]); });
+
+    const hoursNote = document.querySelector('#contact .contact-info-block:nth-child(2) p');
+    if(hoursNote) hoursNote.setAttribute('data-key','hours-note');
+
+    const mapLink = document.querySelector('.map-wrap + a');
+    if(mapLink) mapLink.setAttribute('data-key','map-link');
+
+    // Form
+    tag('.form-title','form-title');
+    tag('.form-subtitle','form-subtitle');
+    const formLabels = document.querySelectorAll('.form-group label');
+    ['form-fname','form-lname','form-email','form-phone','form-service','form-message'].forEach((k,i)=>{ if(formLabels[i]) formLabels[i].setAttribute('data-key',k); });
+    const inputs = document.querySelectorAll('.form-group input, .form-group textarea');
+    inputs.forEach(inp => {
+      if(inp.name==='first_name') inp.setAttribute('data-key','form-fname');
+      if(inp.name==='message') inp.setAttribute('data-key','form-msg-placeholder');
+    });
+    tag('.form-submit','form-submit');
+    tag('.form-disclaimer','form-disclaimer');
+    tag('.success-msg p','success-msg');
+
+    // Select options
+    const opts = document.querySelectorAll('#service option');
+    if(opts[0]) opts[0].setAttribute('data-key','form-service-placeholder');
+    ['opt-1','opt-2','opt-3','opt-4','opt-5','opt-6','opt-7'].forEach((k,i)=>{ if(opts[i+1]) opts[i+1].setAttribute('data-key',k); });
+
+    // Testimonials
+    tag('.testimonials-cta p','reviews-note');
+    tag('.testimonials-cta a','reviews-btn');
+
+    // Contact desc
+    const contactDesc = document.querySelector('#contact .section-inner > .contact-grid > .contact-info > div > p');
+    if(contactDesc) contactDesc.setAttribute('data-key','desc-contact');
+
+    // Contact title
+    const contactTitle = document.querySelector('#contact .section-title');
+    if(contactTitle) contactTitle.setAttribute('data-key','title-contact');
+    const contactLabel = document.querySelector('#contact .section-label');
+    if(contactLabel) contactLabel.setAttribute('data-key','label-contact');
+
+    // Footer
+    tag('.footer-brand p:first-of-type','footer-brand');
+    const footerCols = document.querySelectorAll('.footer-col h4');
+    if(footerCols[0]) footerCols[0].setAttribute('data-key','footer-services');
+    if(footerCols[1]) footerCols[1].setAttribute('data-key','footer-contact');
+    const footerCopy = document.querySelector('.footer-bottom p:first-child');
+    if(footerCopy) footerCopy.setAttribute('data-key','footer-copy');
+    const footerTop = document.querySelector('.footer-bottom p:last-child a');
+    if(footerTop) footerTop.setAttribute('data-key','footer-top');
+
+    // WhatsApp tooltip
+    tag('.wa-tooltip','wa-tooltip');
+  });
+</script>
+</body>
+</html>
