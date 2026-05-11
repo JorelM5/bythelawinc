@@ -128,10 +128,6 @@
       <div class="fg"><label><span class="tr" data-key="l-email">Email</span> <span class="req">*</span></label><input type="email" id="f_email" placeholder="you@email.com" /></div>
       <div class="fg"><label><span class="tr" data-key="l-phone">Phone</span> <span class="req">*</span></label><input type="tel" id="f_phone" placeholder="(916) 000-0000" /></div>
     </div>
-    <div class="frow">
-      <div class="fg"><label><span class="tr" data-key="l-dob">Date of Birth</span></label><input type="date" id="f_dob" /></div>
-      <div class="fg"><label><span class="tr" data-key="l-id">ID / Passport Number</span></label><input type="text" id="f_id" placeholder="A12345678" /></div>
-    </div>
     <div class="fg"><label><span class="tr" data-key="l-addr">Mailing Address</span> <span class="req">*</span></label><input type="text" id="f_addr" placeholder="1234 Main St, Sacramento, CA 95814" /></div>
     <div class="fnav">
       <div></div>
@@ -208,22 +204,39 @@
     <div class="fsec-sub tr" data-key="s3-sub">Where will the apostilled document be used?</div>
     <div class="frow">
       <div class="fg"><label><span class="tr" data-key="l-country">Destination Country</span> <span class="req">*</span></label><input type="text" id="f_country" placeholder="e.g. Mexico, Colombia, Spain..." /></div>
-      <div class="fg">
-        <label><span class="tr" data-key="l-purpose">Purpose of Use</span> <span class="req">*</span></label>
-        <select id="f_purpose">
-          <option value="" disabled selected class="tr" data-key="opt-purpose">Select purpose...</option>
-          <option value="Immigration / Visa" class="tr" data-key="opt-immigration">Immigration / Visa</option>
-          <option value="Marriage Abroad" class="tr" data-key="opt-marriage-dest">Marriage Abroad</option>
-          <option value="Education / University" class="tr" data-key="opt-education">Education / University</option>
-          <option value="Employment Abroad" class="tr" data-key="opt-employment">Employment Abroad</option>
-          <option value="Legal Proceedings" class="tr" data-key="opt-legal">Legal Proceedings</option>
-          <option value="Inheritance / Estate" class="tr" data-key="opt-inheritance">Inheritance / Estate</option>
-          <option value="Business / Commercial" class="tr" data-key="opt-business">Business / Commercial</option>
-          <option value="Other" class="tr" data-key="opt-other-dest">Other</option>
-        </select>
+      <div class="fg"></div>
+    </div>
+    <div class="fg">
+      <label><span class="tr" data-key="l-original-docs">Original document(s) will be</span> <span class="req">*</span></label>
+      <div class="chk-grid" style="grid-template-columns:1fr 1fr;">
+        <label class="chk-item"><input type="radio" name="original_docs" value="dropped off at our office" checked /> <span class="tr" data-key="opt-dropoff">dropped off at our office</span></label>
+        <label class="chk-item"><input type="radio" name="original_docs" value="will be mailed to our office" /> <span class="tr" data-key="opt-mail-office">will be mailed to our office</span></label>
+      </div>
+      <div class="fnote">2500 Marconi Ave, Ste 213, Sacramento, CA 95821</div>
+    </div>
+    <div class="fg">
+      <label><span class="tr" data-key="l-return-method">Apostille document(s) will be returned to you</span> <span class="req">*</span></label>
+      <div class="chk-grid" style="grid-template-columns:1fr 1fr;">
+        <label class="chk-item"><input type="radio" name="return_method" value="certified postal mail" checked /> <span class="tr" data-key="opt-certified-mail">certified postal mail</span></label>
+        <label class="chk-item"><input type="radio" name="return_method" value="FedEx 2 day delivery" /> <span class="tr" data-key="opt-fedex-2day">FedEx 2 day delivery</span></label>
+        <label class="chk-item"><input type="radio" name="return_method" value="FedEx Overnight delivery" /> <span class="tr" data-key="opt-fedex-overnight">FedEx Overnight delivery</span></label>
       </div>
     </div>
-    <div class="fg"><label><span class="tr" data-key="l-institution">Receiving Institution</span></label><input type="text" id="f_institution" placeholder="e.g. Embassy of Mexico..." /></div>
+    <div class="fg">
+      <label><span class="tr" data-key="l-other-recipient">Is someone else receiving Apostilled document(s)?</span> <span class="req">*</span></label>
+      <div class="chk-grid" style="grid-template-columns:1fr 1fr;">
+        <label class="chk-item"><input type="radio" name="other_recipient" value="Yes" /> <span class="tr" data-key="opt-yes">Yes</span></label>
+        <label class="chk-item"><input type="radio" name="other_recipient" value="No" checked /> <span class="tr" data-key="opt-no">No</span></label>
+      </div>
+    </div>
+    <div class="frow">
+      <div class="fg"><label><span class="tr" data-key="l-rec-name">Name</span></label><input type="text" id="f_rec_name" /></div>
+      <div class="fg"><label><span class="tr" data-key="l-rec-phone">Phone</span></label><input type="text" id="f_rec_phone" /></div>
+    </div>
+    <div class="frow">
+      <div class="fg"><label><span class="tr" data-key="l-rec-address">Address</span></label><input type="text" id="f_rec_address" /></div>
+      <div class="fg"><label><span class="tr" data-key="l-rec-email">E-Mail</span></label><input type="email" id="f_rec_email" /></div>
+    </div>
     <div class="fg">
       <label><span class="tr" data-key="l-delivery">Delivery Preference</span> <span class="req">*</span></label>
       <div class="chk-grid" style="grid-template-columns:1fr 1fr;">
@@ -306,12 +319,11 @@ const T = {
     's3-title':'Destination Country','s3-sub':'Where will the apostilled document be used?',
     's4-title':'Review Your Information','s4-sub':'Please verify all details before generating the PDF.',
     'l-fname':'First Name','l-lname':'Last Name','l-email':'Email','l-phone':'Phone',
-    'l-dob':'Date of Birth','l-id':'ID / Passport Number','l-addr':'Mailing Address',
+    'l-addr':'Mailing Address',
     'l-doc-type':'Document Type','l-issued':'Date Issued','l-authority':'Issuing Authority',
     'l-state':'State of Issue','l-copies':'Number of Copies','l-doclang':'Language of Document',
     'l-extras':'Additional Services','l-notes':'Additional Notes',
-    'l-country':'Destination Country','l-purpose':'Purpose of Use',
-    'l-institution':'Receiving Institution','l-delivery':'Delivery Preference',
+    'l-country':'Destination Country','l-delivery':'Delivery Preference','l-original-docs':'Original document(s) will be','l-return-method':'Apostille document(s) will be returned to you','l-other-recipient':'Is someone else receiving Apostilled document(s)?','l-rec-name':'Name','l-rec-address':'Address','l-rec-phone':'Phone','l-rec-email':'E-Mail',
     'l-prefdate':'Preferred Ready Date','l-heard':'How did you hear about us?',
     'opt-select':'Select document type...','opt-birth':'Birth Certificate','opt-marriage':'Marriage Certificate',
     'opt-divorce':'Divorce Decree','opt-death':'Death Certificate','opt-diploma':'Diploma / Degree',
@@ -320,10 +332,7 @@ const T = {
     'opt-english':'English','opt-spanish':'Spanish','opt-bilingual':'Bilingual','opt-other-lang':'Other',
     'chk-translation':'Certified Translation','chk-notary':'Notarization Required',
     'chk-certified':'Certified Copy','chk-rush':'Rush Processing',
-    'opt-purpose':'Select purpose...','opt-immigration':'Immigration / Visa',
-    'opt-marriage-dest':'Marriage Abroad','opt-education':'Education / University',
-    'opt-employment':'Employment Abroad','opt-legal':'Legal Proceedings',
-    'opt-inheritance':'Inheritance / Estate','opt-business':'Business / Commercial','opt-other-dest':'Other',
+    'opt-dropoff':'dropped off at our office','opt-mail-office':'will be mailed to our office','opt-certified-mail':'certified postal mail','opt-fedex-2day':'FedEx 2 day delivery','opt-fedex-overnight':'FedEx Overnight delivery','opt-yes':'Yes','opt-no':'No',
     'opt-pickup':'Pick up at office','opt-mail':'Mail to me',
     'note-date':'Standard processing: 5–10 business days.',
     'opt-heard-default':'Select...','opt-google':'Google','opt-referral':'Referral',
@@ -334,11 +343,10 @@ const T = {
     'success-msg':'Your PDF has been downloaded and a summary has been sent to our office.',
     // review labels
     'r-applicant':'Applicant','r-name':'Name','r-email':'Email','r-phone':'Phone',
-    'r-dob':'Date of Birth','r-id':'ID / Passport','r-address':'Address',
+    'r-address':'Address',
     'r-document':'Document','r-type':'Type','r-issued':'Date Issued','r-authority':'Authority',
     'r-state':'State','r-copies':'Copies','r-lang':'Language','r-extras':'Add-ons',
-    'r-destination':'Destination','r-country':'Country','r-purpose':'Purpose',
-    'r-institution':'Institution','r-delivery':'Delivery','r-date':'Preferred Date',
+    'r-destination':'Destination','r-country':'Country','r-delivery':'Delivery','r-original-docs':'Original docs','r-return-method':'Return method','r-other-recipient':'Other recipient','r-rec-name':'Recipient name','r-rec-address':'Recipient address','r-rec-phone':'Recipient phone','r-rec-email':'Recipient email','r-date':'Preferred Date',
     'r-none':'None','r-na':'N/A',
   },
   es: {
@@ -353,12 +361,12 @@ const T = {
     's3-title':'País de Destino','s3-sub':'¿Dónde se utilizará el documento apostillado?',
     's4-title':'Revise su Información','s4-sub':'Verifique todos los datos antes de generar el PDF.',
     'l-fname':'Nombre','l-lname':'Apellido','l-email':'Correo electrónico','l-phone':'Teléfono',
-    'l-dob':'Fecha de Nacimiento','l-id':'No. de ID / Pasaporte','l-addr':'Dirección de Correo',
+    'l-addr':'Dirección de Correo',
     'l-doc-type':'Tipo de Documento','l-issued':'Fecha de Emisión','l-authority':'Autoridad Emisora',
     'l-state':'Estado de Emisión','l-copies':'Número de Copias','l-doclang':'Idioma del Documento',
     'l-extras':'Servicios Adicionales','l-notes':'Notas Adicionales',
-    'l-country':'País de Destino','l-purpose':'Propósito de Uso',
-    'l-institution':'Institución Receptora','l-delivery':'Preferencia de Entrega',
+    'l-country':'País de Destino',
+    'l-delivery':'Preferencia de Entrega','l-original-docs':'Los documentos originales serán','l-return-method':'Los documentos apostillados se le devolverán','l-other-recipient':'¿Otra persona recibirá los documentos apostillados?','l-rec-name':'Nombre','l-rec-address':'Dirección','l-rec-phone':'Teléfono','l-rec-email':'E-Mail',
     'l-prefdate':'Fecha Preferida de Entrega','l-heard':'¿Cómo nos conoció?',
     'opt-select':'Seleccione el tipo de documento...','opt-birth':'Acta de Nacimiento',
     'opt-marriage':'Acta de Matrimonio','opt-divorce':'Decreto de Divorcio',
@@ -368,11 +376,7 @@ const T = {
     'opt-english':'Inglés','opt-spanish':'Español','opt-bilingual':'Bilingüe','opt-other-lang':'Otro',
     'chk-translation':'Traducción Certificada','chk-notary':'Notarización Requerida',
     'chk-certified':'Copia Certificada','chk-rush':'Procesamiento Express',
-    'opt-purpose':'Seleccione el propósito...','opt-immigration':'Inmigración / Visa',
-    'opt-marriage-dest':'Matrimonio en el Extranjero','opt-education':'Educación / Universidad',
-    'opt-employment':'Empleo en el Extranjero','opt-legal':'Trámites Legales',
-    'opt-inheritance':'Herencia / Testamento','opt-business':'Negocio / Comercial','opt-other-dest':'Otro',
-    'opt-pickup':'Recoger en oficina','opt-mail':'Enviar por correo',
+    'opt-pickup':'Recoger en oficina','opt-mail':'Enviar por correo','opt-dropoff':'entregados en nuestra oficina','opt-mail-office':'enviados por correo a nuestra oficina','opt-certified-mail':'correo postal certificado','opt-fedex-2day':'FedEx entrega en 2 días','opt-fedex-overnight':'FedEx entrega al día siguiente','opt-yes':'Sí','opt-no':'No',
     'note-date':'Tiempo estándar: 5–10 días hábiles.',
     'opt-heard-default':'Seleccione...','opt-google':'Google','opt-referral':'Referido',
     'opt-social':'Redes Sociales','opt-returning':'Cliente Frecuente','opt-other-heard':'Otro',
@@ -381,11 +385,10 @@ const T = {
     'success-title':'¡PDF Generado!',
     'success-msg':'Su PDF ha sido descargado y un resumen fue enviado a nuestra oficina.',
     'r-applicant':'Solicitante','r-name':'Nombre','r-email':'Correo','r-phone':'Teléfono',
-    'r-dob':'Fecha de Nacimiento','r-id':'ID / Pasaporte','r-address':'Dirección',
+    'r-address':'Dirección',
     'r-document':'Documento','r-type':'Tipo','r-issued':'Fecha de Emisión','r-authority':'Autoridad',
     'r-state':'Estado','r-copies':'Copias','r-lang':'Idioma','r-extras':'Servicios',
-    'r-destination':'Destino','r-country':'País','r-purpose':'Propósito',
-    'r-institution':'Institución','r-delivery':'Entrega','r-date':'Fecha Preferida',
+    'r-destination':'Destino','r-country':'País','r-delivery':'Entrega','r-original-docs':'Documentos originales','r-return-method':'Método de devolución','r-other-recipient':'Otro receptor','r-rec-name':'Nombre receptor','r-rec-address':'Dirección receptor','r-rec-phone':'Teléfono receptor','r-rec-email':'Correo receptor','r-date':'Fecha Preferida',
     'r-none':'Ninguno','r-na':'N/D',
   }
 };
@@ -431,7 +434,7 @@ function validate() {
   const req = {
     1: ['f_fname','f_lname','f_email','f_phone','f_addr'],
     2: ['f_doctype','f_state'],
-    3: ['f_country','f_purpose'],
+    3: ['f_country'],
   };
   let ok = true;
   (req[step] || []).forEach(id => {
@@ -471,8 +474,6 @@ function buildReview() {
       ${row(t('r-name'), fv('f_fname')+' '+fv('f_lname'))}
       ${row(t('r-email'), fv('f_email'))}
       ${row(t('r-phone'), fv('f_phone'))}
-      ${row(t('r-dob'), fv('f_dob'))}
-      ${row(t('r-id'), fv('f_id'))}
       ${row(t('r-address'), fv('f_addr'))}
     </div>
     <div class="rev-block">
@@ -488,9 +489,14 @@ function buildReview() {
     <div class="rev-block" style="grid-column:1/-1">
       <h4>${t('r-destination')}</h4>
       ${row(t('r-country'), fv('f_country'))}
-      ${row(t('r-purpose'), fv('f_purpose'))}
-      ${row(t('r-institution'), fv('f_institution'))}
       ${row(t('r-delivery'), del)}
+      ${row(t('r-original-docs'), document.querySelector('input[name="original_docs"]:checked')?.value || t('r-na'))}
+      ${row(t('r-return-method'), document.querySelector('input[name="return_method"]:checked')?.value || t('r-na'))}
+      ${row(t('r-other-recipient'), document.querySelector('input[name="other_recipient"]:checked')?.value || t('r-na'))}
+      ${row(t('r-rec-name'), fv('f_rec_name'))}
+      ${row(t('r-rec-address'), fv('f_rec_address'))}
+      ${row(t('r-rec-phone'), fv('f_rec_phone'))}
+      ${row(t('r-rec-email'), fv('f_rec_email'))}
       ${row(t('r-date'), fv('f_date'))}
     </div>`;
 }
@@ -554,8 +560,6 @@ function generatePDF() {
     {l:t('r-name'),v:`${fv('f_fname')} ${fv('f_lname')}`},
     {l:t('r-phone'),v:fv('f_phone')},
     {l:t('r-email'),v:fv('f_email')},
-    {l:t('r-dob'),v:fv('f_dob')},
-    {l:t('r-id'),v:fv('f_id')},
     {l:t('r-address'),v:fv('f_addr')},
   ]);
   y+=4;
@@ -581,8 +585,10 @@ function generatePDF() {
   y+=4;
   secHead(t('r-destination'));
   twoCol([
-    {l:t('r-country'),v:fv('f_country')},{l:t('r-purpose'),v:fv('f_purpose')},
-    {l:t('r-institution'),v:fv('f_institution')},{l:t('r-delivery'),v:del},
+    {l:t('r-country'),v:fv('f_country')},{l:t('r-delivery'),v:del},
+    {l:t('r-original-docs'),v:(document.querySelector('input[name="original_docs"]:checked')?.value||'')},{l:t('r-return-method'),v:(document.querySelector('input[name="return_method"]:checked')?.value||'')},
+    {l:t('r-other-recipient'),v:(document.querySelector('input[name="other_recipient"]:checked')?.value||'')},{l:t('r-rec-name'),v:fv('f_rec_name')},
+    {l:t('r-rec-address'),v:fv('f_rec_address')},{l:t('r-rec-phone'),v:fv('f_rec_phone')},{l:t('r-rec-email'),v:fv('f_rec_email')},{l:t('r-delivery'),v:del},
     {l:t('r-date'),v:fv('f_date')},{l:lang==='es'?'¿Cómo nos conoció?':'How heard',v:fv('f_heard')},
   ]);
   y+=10;
@@ -625,7 +631,10 @@ function generatePDF() {
 
   // Email summary
   const t2=k=>T[lang][k]||T.en[k]||k;
-  const summary=`NEW APOSTILLE REQUEST\n${'='.repeat(40)}\nClient: ${fv('f_fname')} ${fv('f_lname')}\nEmail: ${fv('f_email')}\nPhone: ${fv('f_phone')}\nDOB: ${fv('f_dob')}\nID: ${fv('f_id')}\nAddress: ${fv('f_addr')}\n\nDOCUMENT\n${'─'.repeat(30)}\nType: ${fv('f_doctype')}\nIssued: ${fv('f_issued')}\nAuthority: ${fv('f_authority')}\nState: ${fv('f_state')}\nCopies: ${fv('f_copies')}\nLanguage: ${fv('f_doclang')}\nExtras: ${extras.length?extras.join(', '):'None'}\nNotes: ${fv('f_notes')}\n\nDESTINATION\n${'─'.repeat(30)}\nCountry: ${fv('f_country')}\nPurpose: ${fv('f_purpose')}\nInstitution: ${fv('f_institution')}\nDelivery: ${del}\nPreferred Date: ${fv('f_date')}\nHow heard: ${fv('f_heard')}\n\nRef: ${fn}\nSubmitted: ${new Date().toLocaleString()}`;
+  const originalDocs = document.querySelector('input[name="original_docs"]:checked')?.value || '';
+  const returnMethod = document.querySelector('input[name="return_method"]:checked')?.value || '';
+  const otherRecipient = document.querySelector('input[name="other_recipient"]:checked')?.value || '';
+  const summary=`NEW APOSTILLE REQUEST\n${'='.repeat(40)}\nClient: ${fv('f_fname')} ${fv('f_lname')}\nEmail: ${fv('f_email')}\nPhone: ${fv('f_phone')}\nAddress: ${fv('f_addr')}\n\nDOCUMENT\n${'─'.repeat(30)}\nType: ${fv('f_doctype')}\nIssued: ${fv('f_issued')}\nAuthority: ${fv('f_authority')}\nState: ${fv('f_state')}\nCopies: ${fv('f_copies')}\nLanguage: ${fv('f_doclang')}\nExtras: ${extras.length?extras.join(', '):'None'}\nNotes: ${fv('f_notes')}\n\nDESTINATION\n${'─'.repeat(30)}\nCountry: ${fv('f_country')}\nDelivery: ${del}\nOriginal docs: ${originalDocs}\nReturn method: ${returnMethod}\nOther recipient: ${otherRecipient}\nRecipient name: ${fv('f_rec_name')}\nRecipient address: ${fv('f_rec_address')}\nRecipient phone: ${fv('f_rec_phone')}\nRecipient email: ${fv('f_rec_email')}\nPreferred Date: ${fv('f_date')}\nHow heard: ${fv('f_heard')}\n\nRef: ${fn}\nSubmitted: ${new Date().toLocaleString()}`;
 
   emailjs.send(EJS_SERVICE,EJS_TEMPLATE,{
     to_email:'info@bythelawinc.com',
